@@ -1,1 +1,27 @@
-<p>manager-notes works!</p>
+<div class="p-6 max-w-7xl mx-auto">
+    <h1 class="text-2xl font-bold text-[#c20d00] mb-6">📘 Glossary: Potential for Movement Scale</h1>
+  
+    <div class="overflow-x-auto">
+      <table class="min-w-full border border-gray-300 text-sm">
+        <thead class="bg-gray-200 text-left">
+          <tr>
+            <th class="p-3 border-b">Designation</th>
+            <th class="p-3 border-b">Potential Characteristics</th>
+            <th class="p-3 border-b">Movement</th>
+            <th class="p-3 border-b">Development Action</th>
+            <th class="p-3 border-b">Guidelines</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of glossary" [ngClass]="item.color">
+            <td class="p-3 font-semibold">{{ item.designation }}</td>
+            <td class="p-3">{{ item.potential }}</td>
+            <td class="p-3">{{ item.movement }}</td>
+            <td class="p-3">{{ item.action }}</td>
+            <td class="p-3">{{ item.guideline }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
