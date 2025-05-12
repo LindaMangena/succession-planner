@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { Employee } from '../../Model/employee.model';
 
@@ -21,40 +21,13 @@ export class AddSuccessionPlanComponent {
   developmentPlan = '';
   targetDate = '';
 
-  // Mock data
-  employees: Employee[] = [
-    {
-      personnelNumber: '001',
-      name: 'John Doe',
-      position: 'Store Manager',
-      startDate: '2018-01-01',
-      operations: 'Operations North',
-      manager: 'Jane Smith',
-      employmentType: 'Permanent',
-      lt: 'Yes',
-      exco: 'No',
-      performanceRating: 'Exceeds Expectations',
-    },
-    {
-      personnelNumber: '002',
-      name: 'Alice Johnson',
-      position: 'Shift Supervisor',
-      startDate: '2019-06-15',
-      operations: 'Operations North',
-      manager: 'John Doe',
-      employmentType: 'Permanent',
-      lt: 'No',
-      exco: 'No',
-      performanceRating: 'Meets Expectations',
-    },
-  ];
-
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private router: Router) {
     this.employeeId = this.route.snapshot.paramMap.get('id');
-    this.employee = this.employees.find(e => e.personnelNumber === this.employeeId);
+
+    const employees: Employee[] = JSON.parse(localStorage.getItem('employees') || '[]');
+    this.employee = employees.find(emp => emp.personnelNumber === this.employeeId);
   }
 
-  // ✅ THIS METHOD FIXES YOUR ERROR
   submitPlan() {
     if (!this.successorName || !this.readinessLevel || !this.targetDate) {
       alert('Please fill in all required fields.');
@@ -62,14 +35,20 @@ export class AddSuccessionPlanComponent {
     }
 
     const plan = {
-      forEmployee: this.employee?.name,
+      employeeId: this.employeeId,
+      forEmployee: this.employee?.name || '',
       successorName: this.successorName,
       readinessLevel: this.readinessLevel,
       developmentPlan: this.developmentPlan,
       targetDate: this.targetDate,
+      createdAt: new Date().toISOString(),
     };
 
-    console.log('✅ Succession Plan Submitted:', plan);
-    alert('Succession plan saved successfully!');
+    const existingPlans = JSON.parse(localStorage.getItem('successionPlans') || '[]');
+    existingPlans.push(plan);
+    localStorage.setItem('successionPlans', JSON.stringify(existingPlans));
+
+    alert('✅ Succession plan saved successfully!');
+    this.router.navigate(['/employees', this.employeeId]);
   }
 }
