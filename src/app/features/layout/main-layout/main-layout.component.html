@@ -1,33 +1,46 @@
 <div class="flex min-h-screen bg-[#f9fafb] text-gray-900">
   <!-- Sidebar -->
   <aside class="w-64 bg-black text-white h-screen flex flex-col fixed shadow-lg">
-    <div class="h-20 flex items-center justify-center border-b border-[#23512f]">
-      <img src="assets/mcd-logo.png" class="h-10" alt="McDonald's Logo" />
+    <!-- Logo -->
+    <!-- Logo -->
+    <div class="flex justify-center items-center bg-black border-b border-[#23512f] py-6">
+      <div class="bg-white p-2 rounded-lg shadow-lg">
+        <img src="/GoldenArches.png.coredownload.png" alt="McDonald's Logo" class="h-12 w-auto" />
+      </div>
     </div>
-    <nav class="flex-1 p-4 space-y-2">
+
+
+
+
+
+
+
+
+    <!-- Navigation -->
+    <nav class="flex-1 p-4 space-y-2 font-medium text-sm">
       <a routerLink="/dashboard" routerLinkActive="bg-[#23512f] text-white"
-         class="block p-2 rounded transition duration-150 hover:bg-[#23512f] hover:text-white">
-        🏠 Dashboard
+        class="flex items-center gap-3 p-3 rounded-md transition hover:bg-[#c20d00] hover:text-white">
+        🏠 <span>Dashboard</span>
       </a>
       <a routerLink="/employees" routerLinkActive="bg-[#23512f] text-white"
-         class="block p-2 rounded transition duration-150 hover:bg-[#23512f] hover:text-white">
-        👥 Employees
+        class="flex items-center gap-3 p-3 rounded-md transition hover:bg-[#c20d00] hover:text-white">
+        👥 <span>Employees</span>
       </a>
       <a routerLink="/roles" routerLinkActive="bg-[#23512f] text-white"
-         class="block p-2 rounded transition duration-150 hover:bg-[#23512f] hover:text-white">
-        🎯 Key Roles
+        class="flex items-center gap-3 p-3 rounded-md transition hover:bg-[#c20d00] hover:text-white">
+        🎯 <span>Key Roles</span>
       </a>
       <a routerLink="/successors" routerLinkActive="bg-[#23512f] text-white"
-         class="block p-2 rounded transition duration-150 hover:bg-[#23512f] hover:text-white">
-        🔁 Successors
+        class="flex items-center gap-3 p-3 rounded-md transition hover:bg-[#c20d00] hover:text-white">
+        🔁 <span>Successors</span>
       </a>
       <a routerLink="/development" routerLinkActive="bg-[#23512f] text-white"
-         class="block p-2 rounded transition duration-150 hover:bg-[#23512f] hover:text-white">
-        📚 Development
+        class="flex items-center gap-3 p-3 rounded-md transition hover:bg-[#c20d00] hover:text-white">
+        📚 <span>Development</span>
       </a>
       <a routerLink="/comments" routerLinkActive="bg-[#23512f] text-white"
-         class="block p-2 rounded transition duration-150 hover:bg-[#23512f] hover:text-white">
-        📝 Manager Notes
+        class="flex items-center gap-3 p-3 rounded-md transition hover:bg-[#c20d00] hover:text-white">
+        📝 <span>Manager Notes</span>
       </a>
     </nav>
   </aside>
