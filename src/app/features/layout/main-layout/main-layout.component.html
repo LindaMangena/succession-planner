@@ -1,0 +1,39 @@
+<div class="flex min-h-screen bg-[#f9fafb] text-gray-900">
+  <!-- Sidebar -->
+  <aside class="w-64 bg-black text-white h-screen flex flex-col fixed shadow-lg">
+    <div class="h-20 flex items-center justify-center border-b border-[#23512f]">
+      <img src="assets/mcd-logo.png" class="h-10" alt="McDonald's Logo" />
+    </div>
+    <nav class="flex-1 p-4 space-y-2">
+      <a routerLink="/dashboard" routerLinkActive="bg-[#23512f] text-white"
+         class="block p-2 rounded transition duration-150 hover:bg-[#23512f] hover:text-white">
+        🏠 Dashboard
+      </a>
+      <a routerLink="/employees" routerLinkActive="bg-[#23512f] text-white"
+         class="block p-2 rounded transition duration-150 hover:bg-[#23512f] hover:text-white">
+        👥 Employees
+      </a>
+      <a routerLink="/roles" routerLinkActive="bg-[#23512f] text-white"
+         class="block p-2 rounded transition duration-150 hover:bg-[#23512f] hover:text-white">
+        🎯 Key Roles
+      </a>
+      <a routerLink="/successors" routerLinkActive="bg-[#23512f] text-white"
+         class="block p-2 rounded transition duration-150 hover:bg-[#23512f] hover:text-white">
+        🔁 Successors
+      </a>
+      <a routerLink="/development" routerLinkActive="bg-[#23512f] text-white"
+         class="block p-2 rounded transition duration-150 hover:bg-[#23512f] hover:text-white">
+        📚 Development
+      </a>
+      <a routerLink="/comments" routerLinkActive="bg-[#23512f] text-white"
+         class="block p-2 rounded transition duration-150 hover:bg-[#23512f] hover:text-white">
+        📝 Manager Notes
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="ml-64 p-6 w-full">
+    <router-outlet></router-outlet>
+  </main>
+</div>

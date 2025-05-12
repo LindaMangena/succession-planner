@@ -1,0 +1,30 @@
+<div class="p-6">
+  <h1 class="text-2xl font-bold text-[#c20d00] mb-6">📋 Succession Plans</h1>
+
+  <div *ngIf="plans.length; else noPlans">
+    <div class="overflow-x-auto rounded-lg shadow">
+      <table class="min-w-full bg-white text-sm text-left">
+        <thead class="bg-gray-100 text-gray-700">
+          <tr>
+            <th class="px-4 py-3">Employee</th>
+            <th class="px-4 py-3">Successor</th>
+            <th class="px-4 py-3">Readiness</th>
+            <th class="px-4 py-3">Target Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let plan of plans" class="border-t hover:bg-gray-50">
+            <td class="px-4 py-2">{{ plan.forEmployee }}</td>
+            <td class="px-4 py-2">{{ plan.successorName }}</td>
+            <td class="px-4 py-2">{{ plan.readinessLevel }}</td>
+            <td class="px-4 py-2">{{ plan.targetDate }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <ng-template #noPlans>
+    <p class="text-gray-600">No succession plans found.</p>
+  </ng-template>
+</div>

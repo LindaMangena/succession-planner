@@ -1,0 +1,78 @@
+<div class="p-6 max-w-2xl mx-auto">
+  <!-- Back -->
+  <a
+    routerLink="/employees"
+    class="text-sm text-blue-600 hover:underline inline-flex items-center mb-6"
+  >
+    ← Back to Employee List
+  </a>
+
+  <!-- Card -->
+  <div class="bg-white shadow-lg rounded-xl p-6">
+    <h1 class="text-2xl font-bold text-[#c20d00] mb-6 flex items-center gap-2">
+      📋 Add Succession Plan
+    </h1>
+
+    <form (ngSubmit)="submitPlan()" class="space-y-6">
+      <!-- Successor Name -->
+      <div>
+        <label class="block font-semibold mb-1">Successor Name</label>
+        <input
+          type="text"
+          [(ngModel)]="successorName"
+          name="successorName"
+          required
+          class="w-full border rounded px-4 py-2"
+        />
+      </div>
+
+      <!-- Readiness Level -->
+      <div>
+        <label class="block font-semibold mb-1">Readiness Level</label>
+        <select
+          [(ngModel)]="readinessLevel"
+          name="readinessLevel"
+          required
+          class="w-full border rounded px-4 py-2"
+        >
+          <option value="" disabled selected>Select readiness</option>
+          <option value="Ready Now">Ready Now</option>
+          <option value="Ready in 2–3 Years">Ready in 2–3 Years</option>
+          <option value="Ready in 4+ Years">Ready in 4+ Years</option>
+        </select>
+      </div>
+
+      <!-- Development Plan -->
+      <div>
+        <label class="block font-semibold mb-1">Development Plan</label>
+        <textarea
+          [(ngModel)]="developmentPlan"
+          name="developmentPlan"
+          rows="3"
+          class="w-full border rounded px-4 py-2"
+          placeholder="Outline development actions..."
+        ></textarea>
+      </div>
+
+      <!-- Target Date -->
+      <div>
+        <label class="block font-semibold mb-1">Target Date</label>
+        <input
+          type="date"
+          [(ngModel)]="targetDate"
+          name="targetDate"
+          required
+          class="w-full border rounded px-4 py-2"
+        />
+      </div>
+
+      <!-- Submit -->
+      <button
+        type="submit"
+        class="bg-[#23512f] text-white px-6 py-2 rounded hover:bg-green-700 transition"
+      >
+        ➕ Save Succession Plan
+      </button>
+    </form>
+  </div>
+</div>
