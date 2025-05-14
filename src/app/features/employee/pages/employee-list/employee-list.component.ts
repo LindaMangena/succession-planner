@@ -25,10 +25,10 @@ export class EmployeeListComponent {
   ) {
     this.employeeService.setEmployees(this.employees);
   }
-  
+
 
   employees: Employee[] = [
-   
+
 
     {
       personnelNumber: "77700",
@@ -66,18 +66,18 @@ export class EmployeeListComponent {
       exco: "Gregory Solomon",
       performanceRating: "Significant",
     },
-    {
-      personnelNumber: "170",
-      name: "Elizabeth Madiga",
-      position: "Senior Payroll Administra",
-      startDate: "2012-11-22 00:00:00",
-      operations: "Human Capital McOpCo",
-      manager: "Elpelet Mashile",
-      employmentType: "Permanent",
-      lt: "Gregory Solomon",
-      exco: "Gregory Solomon",
-      performanceRating: "Significant",
-    },
+    // {
+    //   personnelNumber: "170",
+    //   name: "Elizabeth Madiga",
+    //   position: "Senior Payroll Administra",
+    //   startDate: "2012-11-22 00:00:00",
+    //   operations: "Human Capital McOpCo",
+    //   manager: "Elpelet Mashile",
+    //   employmentType: "Permanent",
+    //   lt: "Gregory Solomon",
+    //   exco: "Gregory Solomon",
+    //   performanceRating: "Significant",
+    // },
     {
       personnelNumber: "63564",
       name: "Kim Nichole Ruiters",
@@ -90,18 +90,18 @@ export class EmployeeListComponent {
       exco: "Gregory Solomon",
       performanceRating: "Significant",
     },
-    {
-      personnelNumber: "67959",
-      name: "Natalie Mary Thomas",
-      position: "Payroll Administrator",
-      startDate: "2018-01-15 00:00:00",
-      operations: "Human Capital McOpCo",
-      manager: "Elpelet Mashile",
-      employmentType: "Permanent",
-      lt: "Gregory Solomon",
-      exco: "Gregory Solomon",
-      performanceRating: "Significant",
-    },
+    // {
+    //   personnelNumber: "67959",
+    //   name: "Natalie Mary Thomas",
+    //   position: "Payroll Administrator",
+    //   startDate: "2018-01-15 00:00:00",
+    //   operations: "Human Capital McOpCo",
+    //   manager: "Elpelet Mashile",
+    //   employmentType: "Permanent",
+    //   lt: "Gregory Solomon",
+    //   exco: "Gregory Solomon",
+    //   performanceRating: "Significant",
+    // },
     {
       personnelNumber: "70287",
       name: "Roxanne Katrina Hadiaris",
@@ -126,18 +126,18 @@ export class EmployeeListComponent {
       exco: "Gregory Solomon",
       performanceRating: "Significant",
     },
-    {
-      personnelNumber: "78495",
-      name: "Nasira Madziwa",
-      position: "Coordinator: Human Capita",
-      startDate: "2021-10-18 00:00:00",
-      operations: "Human Capital McOpCo",
-      manager: "Gregory Solomon",
-      employmentType: "Permanent",
-      lt: "Gregory Solomon",
-      exco: "Gregory Solomon",
-      performanceRating: "Significant",
-    },
+    // {
+    //   personnelNumber: "78495",
+    //   name: "Nasira Madziwa",
+    //   position: "Coordinator: Human Capita",
+    //   startDate: "2021-10-18 00:00:00",
+    //   operations: "Human Capital McOpCo",
+    //   manager: "Gregory Solomon",
+    //   employmentType: "Permanent",
+    //   lt: "Gregory Solomon",
+    //   exco: "Gregory Solomon",
+    //   performanceRating: "Significant",
+    // },
     {
       personnelNumber: "44479",
       name: "Tejal Mani",
