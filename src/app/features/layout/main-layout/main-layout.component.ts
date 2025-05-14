@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -8,4 +9,12 @@ import { RouterModule } from '@angular/router';
   templateUrl: './main-layout.component.html',
   styleUrls: ['./main-layout.component.scss']
 })
-export class MainLayoutComponent {}
+export class MainLayoutComponent {
+  constructor(private router: Router) {}
+
+  logout() {
+    localStorage.clear();
+    sessionStorage.clear();
+    this.router.navigate(['/login']);
+  }
+}

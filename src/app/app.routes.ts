@@ -1,17 +1,29 @@
 import { Routes } from '@angular/router';
-import { MainLayoutComponent } from './features/layout/main-layout/main-layout.component';
 
 export const routes: Routes = [
   {
     path: '',
-    component: MainLayoutComponent,
+    pathMatch: 'full',
+    redirectTo: 'login',
+  },
+  {
+    path: 'login',
+    loadComponent: () =>
+      import('./features/auth/login.component').then((m) => m.LoginComponent),
+  },
+  {
+    path: '',
+    loadComponent: () =>
+      import('./features/layout/main-layout/main-layout.component').then(
+        (m) => m.MainLayoutComponent
+      ),
     children: [
       {
         path: 'dashboard',
         loadComponent: () =>
-          import(
-            './features/dashboard/pages/dashboard/dashboard.component'
-          ).then((m) => m.DashboardComponent),
+          import('./features/dashboard/pages/dashboard/dashboard.component').then(
+            (m) => m.DashboardComponent
+          ),
       },
       {
         path: 'employees',
@@ -37,35 +49,30 @@ export const routes: Routes = [
       {
         path: 'successors',
         loadComponent: () =>
-          import(
-            './features/successors/pages/successors/successors.component'
-          ).then((m) => m.SuccessorsComponent),
+          import('./features/successors/pages/successors/successors.component').then(
+            (m) => m.SuccessorsComponent
+          ),
       },
       {
         path: 'development',
         loadComponent: () =>
-          import(
-            './features/development/pages/development/development.component'
-          ).then((m) => m.DevelopmentComponent),
+          import('./features/development/pages/development/development.component').then(
+            (m) => m.DevelopmentComponent
+          ),
       },
       {
         path: 'employees/:id/succession-plan',
         loadComponent: () =>
-          import(
-            './features/employee/pages/add-succession-plan.component'
-          ).then((m) => m.AddSuccessionPlanComponent),
+          import('./features/employee/pages/add-succession-plan.component').then(
+            (m) => m.AddSuccessionPlanComponent
+          ),
       },
       {
         path: 'comments',
         loadComponent: () =>
-          import(
-            './features/comments/pages/manager-notes/manager-notes.component'
-          ).then((m) => m.ManagerNotesComponent),
-      },
-      {
-        path: '',
-        pathMatch: 'full',
-        redirectTo: 'dashboard',
+          import('./features/comments/pages/manager-notes/manager-notes.component').then(
+            (m) => m.ManagerNotesComponent
+          ),
       },
     ],
   },
