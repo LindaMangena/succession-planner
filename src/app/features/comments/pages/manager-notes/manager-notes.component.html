@@ -1,27 +1,229 @@
 <div class="p-6 max-w-7xl mx-auto">
-    <h1 class="text-2xl font-bold text-[#c20d00] mb-6">📘 Glossary: Potential for Movement Scale</h1>
-  
-    <div class="overflow-x-auto">
-      <table class="min-w-full border border-gray-300 text-sm">
-        <thead class="bg-gray-200 text-left">
+  <!-- Glossary Table -->
+  <h1 class="text-2xl font-bold text-[#c20d00] mb-6">📘 Glossary: Potential for Movement Scale</h1>
+  <div class="overflow-x-auto">
+    <table class="min-w-full border border-gray-300 text-sm">
+      <thead class="bg-gray-200 text-left">
+        <tr>
+          <th class="p-3 border-b">Designation</th>
+          <th class="p-3 border-b">Potential Characteristics</th>
+          <th class="p-3 border-b">Movement</th>
+          <th class="p-3 border-b">Development Action</th>
+          <th class="p-3 border-b">Guidelines</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of glossary" [ngClass]="item.color">
+          <td class="p-3 font-semibold">{{ item.designation }}</td>
+          <td class="p-3">{{ item.potential }}</td>
+          <td class="p-3">{{ item.movement }}</td>
+          <td class="p-3">{{ item.action }}</td>
+          <td class="p-3">{{ item.guideline }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Succession Readiness Matrix -->
+  <div class="mt-12">
+    <h2 class="text-xl font-bold text-[#c20d00] mb-4">📊 Succession Readiness Matrix</h2>
+    <div class="overflow-x-auto rounded-lg border border-gray-300">
+      <table class="min-w-full text-sm text-left bg-white">
+        <thead class="bg-[#f59e0b] text-white">
           <tr>
-            <th class="p-3 border-b">Designation</th>
-            <th class="p-3 border-b">Potential Characteristics</th>
-            <th class="p-3 border-b">Movement</th>
-            <th class="p-3 border-b">Development Action</th>
-            <th class="p-3 border-b">Guidelines</th>
+            <th class="px-4 py-2 w-1/5">Succession Readiness Category</th>
+            <th class="px-4 py-2 w-1/5">Ideal # of Candidates</th>
+            <th class="px-4 py-2">Designation Guidance</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let item of glossary" [ngClass]="item.color">
-            <td class="p-3 font-semibold">{{ item.designation }}</td>
-            <td class="p-3">{{ item.potential }}</td>
-            <td class="p-3">{{ item.movement }}</td>
-            <td class="p-3">{{ item.action }}</td>
-            <td class="p-3">{{ item.guideline }}</td>
+          <tr class="border-b">
+            <td class="px-4 py-3 font-semibold">Ready Now (RN)</td>
+            <td class="px-4 py-3">1 RN or CS</td>
+            <td class="px-4 py-3">
+              Developmentally ready now or soon. Ready to step in within 0–18 months.
+            </td>
+          </tr>
+          <tr class="bg-[#fef3c7] border-b">
+            <td class="px-4 py-3 font-semibold">Contingency (CS)</td>
+            <td class="px-4 py-3">1 RN or CS</td>
+            <td class="px-4 py-3 italic text-gray-700">
+              Temporary backup if no RN is available.
+            </td>
+          </tr>
+          <tr class="border-b">
+            <td class="px-4 py-3 font-semibold">Ready 2–3 Years (R2–3)</td>
+            <td class="px-4 py-3">1 or more</td>
+            <td class="px-4 py-3">
+              Needs 1–2 years of growth. Ready within 2–3 years.
+            </td>
+          </tr>
+          <tr class="bg-[#fee2e2]">
+            <td class="px-4 py-3 font-semibold">Ready 4+ Years (R4+)</td>
+            <td class="px-4 py-3">3 or more</td>
+            <td class="px-4 py-3">
+              Needs 4+ years of development. Not yet viable.
+            </td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
-  
+
+ <!-- Potential To Watch (PTW) Example -->
+<div class="mt-12">
+  <h2 class="text-xl font-bold text-[#c20d00] mb-4">🔍 Potential To Watch (PTW)</h2>
+  <div class="overflow-x-auto border border-gray-300 rounded-lg">
+    <table class="min-w-full text-sm text-left bg-white">
+      <thead class="bg-[#facc15] text-white">
+        <tr>
+          <th class="px-3 py-2">Name</th>
+          <th class="px-3 py-2">Current Role + Function</th>
+          <th class="px-3 py-2">Global Grade</th>
+          <th class="px-3 py-2">Time in Role</th>
+          <th class="px-3 py-2">Perf 2023</th>
+          <th class="px-3 py-2">Successor to / Next Role</th>
+          <th class="px-3 py-2">Readiness Level</th>
+          <th class="px-3 py-2">Movement</th>
+          <th class="px-3 py-2">Planned Development Actions / When</th>
+          <th class="px-3 py-2">Mentored? If Yes, who?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="bg-orange-50">
+          <td class="px-3 py-2">Jane Doe</td>
+          <td class="px-3 py-2">Marketing Director</td>
+          <td class="px-3 py-2">5</td>
+          <td class="px-3 py-2">2 years</td>
+          <td class="px-3 py-2">EP</td>
+          <td class="px-3 py-2">CMO</td>
+          <td class="px-3 py-2">R2-3</td>
+          <td class="px-3 py-2">Capability to move up 1+ levels; in observation</td>
+          <td class="px-3 py-2">Leadership Program Q3–Q4 2024; BEST Assessment Q2 2024; Global Marketing Project Q4 2024</td>
+          <td class="px-3 py-2">Yes, John Doe</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Full PTW Candidate Table -->
+<div class="mt-12">
+  <h2 class="text-xl font-bold text-[#c20d00] mb-4">📋 Potential To Watch Candidates</h2>
+  <div class="overflow-x-auto border border-gray-300 rounded-lg">
+    <table class="min-w-full text-sm text-left bg-white">
+      <thead class="bg-[#f59e0b] text-white">
+        <tr>
+          <th class="px-3 py-2">Name</th>
+          <th class="px-3 py-2">Current Role + Function</th>
+          <th class="px-3 py-2">Global Grade</th>
+          <th class="px-3 py-2">Time in Role</th>
+          <th class="px-3 py-2">Perf 2023</th>
+          <th class="px-3 py-2">Successor to / Next Role</th>
+          <th class="px-3 py-2">Readiness Level</th>
+          <th class="px-3 py-2">Movement</th>
+          <th class="px-3 py-2">Planned Development Actions / When</th>
+          <th class="px-3 py-2">Mentored?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-b">
+          <td class="px-3 py-2">Pearl</td>
+          <td class="px-3 py-2">CBI Director</td>
+          <td class="px-3 py-2">Director</td>
+          <td class="px-3 py-2">2</td>
+          <td class="px-3 py-2">E</td>
+          <td class="px-3 py-2">Sen Director</td>
+          <td class="px-3 py-2">1</td>
+          <td class="px-3 py-2">1 M</td>
+          <td class="px-3 py-2">2,4,5,10</td>
+          <td class="px-3 py-2">No</td>
+        </tr>
+        <tr class="border-b bg-orange-50">
+          <td class="px-3 py-2">Buntu</td>
+          <td class="px-3 py-2">Training Director</td>
+          <td class="px-3 py-2">Director</td>
+          <td class="px-3 py-2">3</td>
+          <td class="px-3 py-2">S</td>
+          <td class="px-3 py-2">Intl Director</td>
+          <td class="px-3 py-2">RN</td>
+          <td class="px-3 py-2">1 M</td>
+          <td class="px-3 py-2">1</td>
+          <td class="px-3 py-2">No</td>
+        </tr>
+        <tr class="border-b">
+          <td class="px-3 py-2">Carl</td>
+          <td class="px-3 py-2">IT Director</td>
+          <td class="px-3 py-2">Director</td>
+          <td class="px-3 py-2">1</td>
+          <td class="px-3 py-2">S</td>
+          <td class="px-3 py-2">Chief IT</td>
+          <td class="px-3 py-2">RN</td>
+          <td class="px-3 py-2">1 M</td>
+          <td class="px-3 py-2">2,11,12</td>
+          <td class="px-3 py-2">No</td>
+        </tr>
+        <tr class="border-b bg-orange-50">
+          <td class="px-3 py-2">Clarence</td>
+          <td class="px-3 py-2">Digital Manager</td>
+          <td class="px-3 py-2">Manager</td>
+          <td class="px-3 py-2">1</td>
+          <td class="px-3 py-2">E</td>
+          <td class="px-3 py-2">Marketing Director</td>
+          <td class="px-3 py-2">1</td>
+          <td class="px-3 py-2">1 M</td>
+          <td class="px-3 py-2">4,7,10,11</td>
+          <td class="px-3 py-2">No</td>
+        </tr>
+        <tr class="border-b">
+          <td class="px-3 py-2">Thalani</td>
+          <td class="px-3 py-2">Facilities Manager</td>
+          <td class="px-3 py-2">Manager</td>
+          <td class="px-3 py-2">2</td>
+          <td class="px-3 py-2">E</td>
+          <td class="px-3 py-2">Facilities Director</td>
+          <td class="px-3 py-2">RN</td>
+          <td class="px-3 py-2">1 M</td>
+          <td class="px-3 py-2">13,14,9</td>
+          <td class="px-3 py-2">No</td>
+        </tr>
+        <tr class="border-b bg-orange-50">
+          <td class="px-3 py-2">Precious</td>
+          <td class="px-3 py-2">Financial Controller</td>
+          <td class="px-3 py-2">Manager</td>
+          <td class="px-3 py-2">3</td>
+          <td class="px-3 py-2">S</td>
+          <td class="px-3 py-2">Finance Director</td>
+          <td class="px-3 py-2">RN</td>
+          <td class="px-3 py-2">1 M</td>
+          <td class="px-3 py-2">9,14,7,12</td>
+          <td class="px-3 py-2">No</td>
+        </tr>
+        <tr class="border-b">
+          <td class="px-3 py-2">Nomsa</td>
+          <td class="px-3 py-2">Financial Controller</td>
+          <td class="px-3 py-2">Manager</td>
+          <td class="px-3 py-2">1</td>
+          <td class="px-3 py-2">S</td>
+          <td class="px-3 py-2">Finance Director</td>
+          <td class="px-3 py-2">RN</td>
+          <td class="px-3 py-2">1 M</td>
+          <td class="px-3 py-2">10,11,7,21</td>
+          <td class="px-3 py-2">No</td>
+        </tr>
+        <tr class="border-b bg-orange-50">
+          <td class="px-3 py-2">Amanda</td>
+          <td class="px-3 py-2">HR Manager</td>
+          <td class="px-3 py-2">Manager</td>
+          <td class="px-3 py-2">10</td>
+          <td class="px-3 py-2">S</td>
+          <td class="px-3 py-2">HR Director Field</td>
+          <td class="px-3 py-2">RN</td>
+          <td class="px-3 py-2">1 M</td>
+          <td class="px-3 py-2">2,1,8,4</td>
+          <td class="px-3 py-2">No</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

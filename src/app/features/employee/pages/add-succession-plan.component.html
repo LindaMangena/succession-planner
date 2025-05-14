@@ -1,9 +1,6 @@
 <div class="p-6 max-w-2xl mx-auto">
   <!-- Back -->
-  <a
-    routerLink="/employees"
-    class="text-sm text-blue-600 hover:underline inline-flex items-center mb-6"
-  >
+  <a routerLink="/employees" class="text-sm text-blue-600 hover:underline inline-flex items-center mb-6">
     ← Back to Employee List
   </a>
 
@@ -15,7 +12,6 @@
 
     <!-- For Employee -->
     <p class="text-gray-700 mb-6">
-      <!-- <span class="font-semibold">For:</span> -->
       <span class="ml-1 text-black">{{ employee?.name }}</span>
     </p>
 
@@ -23,26 +19,17 @@
       <!-- Successor Name -->
       <div>
         <label class="block font-semibold mb-1">Successor Name</label>
-        <input
-          type="text"
-          [(ngModel)]="successorName"
-          name="successorName"
-          required
-          class="w-full border rounded px-4 py-2"
-        />
+        <input type="text" [(ngModel)]="successorName" name="successorName" required
+          class="w-full border rounded px-4 py-2" />
       </div>
 
       <!-- Readiness Level -->
       <div>
         <label class="block font-semibold mb-1">Readiness Level</label>
-        <select
-          [(ngModel)]="readinessLevel"
-          name="readinessLevel"
-          required
-          class="w-full border rounded px-4 py-2"
-        >
+        <select [(ngModel)]="readinessLevel" name="readinessLevel" required class="w-full border rounded px-4 py-2">
           <option value="" disabled selected>Select readiness</option>
           <option value="Ready Now">Ready Now</option>
+          <option value="Contingency">Contingency</option>
           <option value="Ready in 2–3 Years">Ready in 2–3 Years</option>
           <option value="Ready in 4+ Years">Ready in 4+ Years</option>
         </select>
@@ -51,32 +38,19 @@
       <!-- Development Plan -->
       <div>
         <label class="block font-semibold mb-1">Development Plan</label>
-        <textarea
-          [(ngModel)]="developmentPlan"
-          name="developmentPlan"
-          rows="3"
-          class="w-full border rounded px-4 py-2"
-          placeholder="Outline development actions..."
-        ></textarea>
+        <textarea [(ngModel)]="developmentPlan" name="developmentPlan" rows="3" class="w-full border rounded px-4 py-2"
+          placeholder="Outline development actions..."></textarea>
       </div>
 
       <!-- Target Date -->
       <div>
         <label class="block font-semibold mb-1">Target Date</label>
-        <input
-          type="date"
-          [(ngModel)]="targetDate"
-          name="targetDate"
-          required
-          class="w-full border rounded px-4 py-2"
-        />
+        <input type="date" [(ngModel)]="targetDate" name="targetDate" required
+          class="w-full border rounded px-4 py-2" />
       </div>
 
       <!-- Submit -->
-      <button
-        type="submit"
-        class="bg-[#23512f] text-white px-6 py-2 rounded hover:bg-green-700 transition"
-      >
+      <button type="submit" class="bg-[#23512f] text-white px-6 py-2 rounded hover:bg-green-700 transition">
         ➕ Save Succession Plan
       </button>
     </form>

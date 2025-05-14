@@ -15,6 +15,10 @@ import { EmployeeService } from '../../../../services/employee.service';
 export class EmployeeListComponent {
   searchTerm: string = '';
 
+
+  currentPage: { [manager: string]: number } = {}; // ✅ Added for pagination
+  pageSize: number = 5; // ✅ Number of records per page
+
   constructor(
     private router: Router,
     private employeeService: EmployeeService
@@ -619,6 +623,31 @@ export class EmployeeListComponent {
       e.performanceRating.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
   }
+
+   // ✅ Get paginated reports for a manager
+  getPaginatedReports(manager: string): Employee[] {
+    const page = this.currentPage[manager] || 1;
+    const startIndex = (page - 1) * this.pageSize;
+    return this.getFilteredReports(manager).slice(
+      startIndex,
+      startIndex + this.pageSize
+    );
+  }
+
+  // ✅ Change page for a specific manager
+  changePage(manager: string, delta: number): void {
+    const current = this.currentPage[manager] || 1;
+    const next = current + delta;
+    const max = Math.ceil(this.getFilteredReports(manager).length / this.pageSize);
+    this.currentPage[manager] = Math.max(1, Math.min(next, max));
+  }
+
+  // ✅ Calculate last visible index
+  endIndex(manager: string): number {
+    const page = this.currentPage[manager] || 1;
+    return page * this.pageSize;
+  }
+
 
   goToDetails(id: string) {
     this.router.navigate(['/employees', id]);
