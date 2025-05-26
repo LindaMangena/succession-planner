@@ -1,80 +1,98 @@
-<!-- TODO: Add interactive graphs and export features -->
-
-<div class="p-6">
-  <!-- Title -->
-  <h1 class="text-2xl font-bold text-[#c20d00] mb-6 flex items-center gap-2">
-    <span>📊</span> Succession Readiness Overview
-  </h1>
-
-  <!-- Summary Cards -->
-  <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-10">
-    <div class="bg-white rounded-lg p-5 shadow text-center">
-      <p class="text-sm text-gray-600">Ready Now</p>
-      <p class="text-3xl font-bold text-green-900">5</p>
-      <span class="text-xs text-green-700 bg-green-100 px-2 py-1 rounded">+2 this month</span>
+<div class="p-6 space-y-10">
+  <!-- Top Summary Cards -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+    <div class="bg-white p-4 rounded-xl shadow text-center">
+      <p class="text-sm text-gray-500">Ready Now</p>
+      <h2 class="text-2xl font-bold text-green-800">5</h2>
+      <span class="text-xs text-green-700 bg-green-100 px-2 py-1 rounded-full"
+        >+2 this month</span
+      >
     </div>
-    <div class="bg-white rounded-lg p-5 shadow text-center">
-      <p class="text-sm text-gray-600">Ready in 2–3 Years</p>
-      <p class="text-3xl font-bold text-yellow-500">3</p>
-      <span class="text-xs text-yellow-700 bg-yellow-100 px-2 py-1 rounded">Stable</span>
+    <div class="bg-white p-4 rounded-xl shadow text-center">
+      <p class="text-sm text-gray-500">Ready in 2–3 Years</p>
+      <h2 class="text-2xl font-bold text-yellow-500">3</h2>
+      <span class="text-xs text-yellow-700 bg-yellow-100 px-2 py-1 rounded-full"
+        >Stable</span
+      >
     </div>
-    <div class="bg-white rounded-lg p-5 shadow text-center">
-      <p class="text-sm text-gray-600">Ready in 4+ Years</p>
-      <p class="text-3xl font-bold text-red-600">2</p>
-      <span class="text-xs text-red-700 bg-red-100 px-2 py-1 rounded">-1 drop</span>
+    <div class="bg-white p-4 rounded-xl shadow text-center">
+      <p class="text-sm text-gray-500">Ready in 4+ Years</p>
+      <h2 class="text-2xl font-bold text-red-600">2</h2>
+      <span class="text-xs text-red-700 bg-red-100 px-2 py-1 rounded-full"
+        >-1 drop</span
+      >
     </div>
-    <div class="bg-white rounded-lg p-5 shadow text-center">
-      <p class="text-sm text-gray-600">Contingency</p>
-      <p class="text-3xl font-bold text-blue-600">1</p>
-      <span class="text-xs text-blue-700 bg-blue-100 px-2 py-1 rounded">Backup Only</span>
+    <div class="bg-white p-4 rounded-xl shadow text-center">
+      <p class="text-sm text-gray-500">Contingency</p>
+      <h2 class="text-2xl font-bold text-blue-600">1</h2>
+      <span class="text-xs text-blue-700 bg-blue-100 px-2 py-1 rounded-full"
+        >Backup Only</span
+      >
     </div>
-    <div class="bg-white rounded-lg p-5 shadow text-center">
-      <p class="text-sm text-gray-600">No Successor</p>
-      <p class="text-3xl font-bold text-gray-600">0</p>
-      <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">N/A</span>
-    </div>
-  </div>
-
-  <!-- Progress Bars -->
-  <div class="bg-white rounded-lg p-6 shadow mb-10">
-    <h2 class="text-lg font-semibold text-gray-800 mb-4">Readiness Progress</h2>
-    <div class="space-y-4">
-      <div>
-        <p class="text-sm font-medium text-green-900">Ready Now</p>
-        <div class="w-full bg-gray-200 rounded-full h-3">
-          <div class="bg-green-900 h-3 rounded-full" style="width: 50%"></div>
-        </div>
-      </div>
-      <div>
-        <p class="text-sm font-medium text-yellow-600">Ready in 2–3 Years</p>
-        <div class="w-full bg-gray-200 rounded-full h-3">
-          <div class="bg-yellow-400 h-3 rounded-full" style="width: 30%"></div>
-        </div>
-      </div>
-      <div>
-        <p class="text-sm font-medium text-red-600">Ready in 4+ Years</p>
-        <div class="w-full bg-gray-200 rounded-full h-3">
-          <div class="bg-red-600 h-3 rounded-full" style="width: 20%"></div>
-        </div>
-      </div>
-      <div>
-        <p class="text-sm font-medium text-blue-600">Contingency</p>
-        <div class="w-full bg-gray-200 rounded-full h-3">
-          <div class="bg-blue-500 h-3 rounded-full" style="width: 10%"></div>
-        </div>
-      </div>
-      <div>
-        <p class="text-sm font-medium text-gray-600">No Successor</p>
-        <div class="w-full bg-gray-200 rounded-full h-3">
-          <div class="bg-gray-400 h-3 rounded-full" style="width: 0%"></div>
-        </div>
-      </div>
+    <div class="bg-white p-4 rounded-xl shadow text-center">
+      <p class="text-sm text-gray-500">No Successor</p>
+      <h2 class="text-2xl font-bold text-gray-500">0</h2>
+      <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full"
+        >N/A</span
+      >
     </div>
   </div>
 
-  <!-- Recent Activity + Insights -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-    <div class="bg-white rounded-lg p-6 shadow">
+  <!-- Chart Area -->
+  <!-- Chart Area -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <!-- Donut Chart -->
+    <div class="bg-white p-6 rounded-xl shadow">
+      <h2 class="text-lg font-semibold text-gray-800 mb-4">
+        Potential Distribution
+      </h2>
+      <canvas #potentialChart class="h-60 w-full"></canvas>
+    </div>
+
+    <!-- Bar Chart -->
+    <div class="bg-white p-6 rounded-xl shadow">
+      <h2 class="text-lg font-semibold text-gray-800 mb-4">
+        Succession Readiness
+      </h2>
+      <canvas #readinessChart class="h-60 w-full"></canvas>
+    </div>
+  </div>
+
+  <!-- Talent Matrix Table -->
+  <div class="bg-white p-6 rounded-xl shadow">
+    <h2 class="text-lg font-semibold text-gray-800 mb-4">Talent Matrix</h2>
+    <div class="overflow-x-auto">
+      <table class="min-w-full border text-sm text-center">
+        <thead class="bg-gray-100 text-gray-600">
+          <tr>
+            <th class="p-3">Potential / Readiness</th>
+            <th class="p-3">Ready Now</th>
+            <th class="p-3">Ready 1–2 Years</th>
+            <th class="p-3">Ready 3+ Years</th>
+            <th class="p-3">Not Ready</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-t" *ngFor="let row of matrix">
+            <td
+              class="p-3 text-left font-semibold"
+              [ngStyle]="{ backgroundColor: row.color, color: 'white' }"
+            >
+              {{ row.label }}
+            </td>
+            <td class="p-3">{{ row.readyNow }}</td>
+            <td class="p-3">{{ row.ready12 }}</td>
+            <td class="p-3">{{ row.ready3plus }}</td>
+            <td class="p-3">{{ row.notReady }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Activity & Insights -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="bg-white rounded-xl p-6 shadow">
       <h2 class="text-lg font-semibold text-gray-800 mb-3">Recent Activity</h2>
       <ul class="text-sm text-gray-700 list-disc list-inside">
         <li>Updated readiness status for Jane Smith</li>
@@ -82,15 +100,17 @@
         <li>HR reviewed key roles report</li>
       </ul>
     </div>
-    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 shadow rounded-lg">
+    <div
+      class="bg-yellow-50 border-l-4 border-yellow-400 p-6 shadow rounded-xl"
+    >
       <h2 class="text-lg font-semibold text-yellow-800 mb-2">Insights</h2>
       <p class="text-sm text-yellow-900">
-        🔹 Consider prioritizing development plans for those ready in 2–3 years to avoid future talent gaps.
+        🔹 Consider prioritizing development plans for those ready in 2–3 years
+        to avoid future talent gaps.
       </p>
     </div>
   </div>
 
-  <!-- Footer -->
   <footer class="text-center text-sm text-gray-400 border-t pt-4">
     © 2025 McDonald's Succession Planning Portal
   </footer>
