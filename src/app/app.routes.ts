@@ -74,6 +74,13 @@ export const routes: Routes = [
             (m) => m.ManagerNotesComponent
           ),
       },
+      {
+        path: 'admin/users',
+        loadComponent: () =>
+          import('./features/admin/pages/user-management/user-management.component').then(
+            (m) => m.UserManagementComponent
+          ),
+      },
     ],
   },
 ];
