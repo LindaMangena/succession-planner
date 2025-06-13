@@ -1,4 +1,8 @@
 import { Routes } from '@angular/router';
+import { EmployeeListComponent } from './features/employee/pages/employee-list/employee-list.component';
+import { EmployeeDetailComponent } from './features/employee/pages/employee-detail.component';
+import { SuccessionPlanComponent } from './features/employee/pages/succession-plan/succession-plan.component';
+import { SuccessionPlanFormComponent } from './features/employee/pages/succession-plan-form/succession-plan-form.component';
 
 export const routes: Routes = [
   {
@@ -27,17 +31,11 @@ export const routes: Routes = [
       },
       {
         path: 'employees',
-        loadChildren: () =>
-          import('./features/employee/employee.module').then(
-            (m) => m.EmployeeModule
-          ),
+        component: EmployeeListComponent,
       },
       {
         path: 'employees/:id',
-        loadComponent: () =>
-          import('./features/employee/pages/employee-detail.component').then(
-            (m) => m.EmployeeDetailComponent
-          ),
+        component: EmployeeDetailComponent,
       },
       {
         path: 'roles',
@@ -80,6 +78,18 @@ export const routes: Routes = [
           import('./features/admin/pages/user-management/user-management.component').then(
             (m) => m.UserManagementComponent
           ),
+      },
+      {
+        path: 'succession-plans',
+        component: SuccessionPlanComponent,
+      },
+      {
+        path: 'succession-plans/new',
+        component: SuccessionPlanFormComponent,
+      },
+      {
+        path: 'succession-plans/:id/edit',
+        component: SuccessionPlanFormComponent,
       },
     ],
   },

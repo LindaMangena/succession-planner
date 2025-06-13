@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 interface User {
   personnelNumber: number;
@@ -57,6 +58,10 @@ export class UserManagementComponent implements OnInit {
     exco: '',
     performanceRating: 'Significant'
   };
+
+  constructor(
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.loadUsers();
@@ -151,5 +156,20 @@ export class UserManagementComponent implements OnInit {
       this.users = this.users.filter(u => u.personnelNumber !== user.personnelNumber);
       localStorage.setItem('users', JSON.stringify(this.users));
     }
+  }
+
+  createSuccessionPlan(user: User) {
+    // Store the user data in localStorage temporarily
+    localStorage.setItem('selectedUserForSuccessionPlan', JSON.stringify({
+      personnelNumber: user.personnelNumber,
+      name: user.name,
+      position: user.position,
+      operations: user.operations,
+      manager: user.manager,
+      employmentType: user.employmentType
+    }));
+
+    // Navigate to the succession plan form
+    this.router.navigate(['/succession-plans/new']);
   }
 } 
