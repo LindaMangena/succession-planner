@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SuccessionPlanService } from '../../services/succession-plan.service';
+import { SuccessionPlanService } from '../../../../services/succession-plan.service';
 import { EmployeeService } from '../../../../services/employee.service';
 import { SuccessionPlan } from '../../models/succession-plan.model';
 import { Employee } from '../../../Model/employee.model';
@@ -221,7 +221,7 @@ export class SuccessionPlanFormComponent implements OnInit {
       if (this.isEditMode) {
         this.successionPlanService.updatePlan(this.plan.id!, planData);
       } else {
-        this.successionPlanService.createPlan(planData);
+        this.successionPlanService.addPlan(planData);
       }
       this.router.navigate(['/successors']);
     } catch (error) {

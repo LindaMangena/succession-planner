@@ -27,28 +27,4 @@ export class AddSuccessionPlanComponent {
     const employees: Employee[] = JSON.parse(localStorage.getItem('employees') || '[]');
     this.employee = employees.find(emp => emp.personnelNumber === this.employeeId);
   }
-
-  submitPlan() {
-    if (!this.successorName || !this.readinessLevel || !this.targetDate) {
-      alert('Please fill in all required fields.');
-      return;
-    }
-
-    const plan = {
-      employeeId: this.employeeId,
-      forEmployee: this.employee?.name || '',
-      successorName: this.successorName,
-      readinessLevel: this.readinessLevel,
-      developmentPlan: this.developmentPlan,
-      targetDate: this.targetDate,
-      createdAt: new Date().toISOString(),
-    };
-
-    const existingPlans = JSON.parse(localStorage.getItem('successionPlans') || '[]');
-    existingPlans.push(plan);
-    localStorage.setItem('successionPlans', JSON.stringify(existingPlans));
-
-    alert('✅ Succession plan saved successfully!');
-    this.router.navigate(['/employees', this.employeeId]);
-  }
 }

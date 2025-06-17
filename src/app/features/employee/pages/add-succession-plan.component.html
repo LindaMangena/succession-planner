@@ -15,7 +15,7 @@
       <span class="ml-1 text-black">{{ employee?.name }}</span>
     </p>
 
-    <form (ngSubmit)="submitPlan()" class="space-y-6">
+    <form class="space-y-6">
       <!-- Successor Name -->
       <div>
         <label class="block font-semibold mb-1">Successor Name</label>
@@ -48,11 +48,6 @@
         <input type="date" [(ngModel)]="targetDate" name="targetDate" required
           class="w-full border rounded px-4 py-2" />
       </div>
-
-      <!-- Submit -->
-      <button type="submit" class="bg-[#23512f] text-white px-6 py-2 rounded hover:bg-green-700 transition">
-        ➕ Save Succession Plan
-      </button>
     </form>
   </div>
 </div>

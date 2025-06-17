@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ExportService } from '../../../../services/export.service';
 
 interface User {
   personnelNumber: number;
@@ -60,7 +61,8 @@ export class UserManagementComponent implements OnInit {
   };
 
   constructor(
-    private router: Router
+    private router: Router,
+    private exportService: ExportService
   ) {}
 
   ngOnInit() {
@@ -171,5 +173,44 @@ export class UserManagementComponent implements OnInit {
 
     // Navigate to the succession plan form
     this.router.navigate(['/succession-plans/new']);
+  }
+  exportToCSV() {
+    const data = this.users.map(user => ({
+      'Personnel Number': user.personnelNumber,
+      'Name': user.name,
+      'Position': user.position,
+      'Start Date': user.startDate,
+      'Operations': user.operations,
+      'Manager': user.manager,
+      'Employment Type': user.employmentType,
+      'LT': user.lt,
+      'EXCO': user.exco,
+      'Performance Rating': user.performanceRating
+    }));
+    this.exportService.exportToCSV(data);
+  }
+
+  exportToWord() {
+    const data = this.users.map(user => ({
+      'Personnel Number': user.personnelNumber,
+      'Name': user.name,
+      'Position': user.position,
+      'Start Date': user.startDate,
+      'Operations': user.operations,
+      'Manager': user.manager,
+      'Employment Type': user.employmentType,
+      'LT': user.lt,
+      'EXCO': user.exco,
+      'Performance Rating': user.performanceRating
+    }));
+    this.exportService.exportToWord(data);
+  }
+
+  exportToPDF() {
+    this.exportService.exportToPDF(this.users);
+  }
+
+  exportToExcel() {
+    this.exportService.exportToExcel(this.users);
   }
 } 

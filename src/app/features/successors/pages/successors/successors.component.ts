@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { SuccessionPlan } from '../../../employee/models/succession-plan.model';
-import { SuccessionPlanService } from '../../../employee/services/succession-plan.service';
+import { SuccessionPlanService } from '../../../../services/succession-plan.service';
+import { ExportService } from '../../../../services/export.service';
 
 @Component({
   selector: 'app-successors',
@@ -36,7 +37,8 @@ export class SuccessorsComponent implements OnInit {
 
   constructor(
     private successionPlanService: SuccessionPlanService,
-    private router: Router
+    private router: Router,
+    private exportService: ExportService
   ) {}
 
   ngOnInit() {
@@ -116,5 +118,21 @@ export class SuccessorsComponent implements OnInit {
     this.selectedReadiness = '';
     this.showCriticalTalentOnly = false;
     this.applyFilters();
+  }
+
+  exportToCSV() {
+    this.exportService.exportToCSV(this.filteredPlans);
+  }
+
+  exportToWord() {
+    this.exportService.exportToWord(this.filteredPlans);
+  }
+
+  exportToPDF() {
+    this.exportService.exportToPDF(this.filteredPlans);
+  }
+
+  exportToExcel() {
+    this.exportService.exportToExcel(this.filteredPlans);
   }
 }

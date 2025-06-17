@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { SuccessionPlanService } from '../../services/succession-plan.service';
+import { SuccessionPlanService } from '../../../../services/succession-plan.service';
 import { SuccessionPlan } from '../../models/succession-plan.model';
 import { EmployeeService } from '../../../../services/employee.service';
 import { Employee } from '../../../Model/employee.model';
