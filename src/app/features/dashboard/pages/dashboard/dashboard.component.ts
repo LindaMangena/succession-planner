@@ -1,5 +1,5 @@
 import { Component, AfterViewInit, ViewChild, ElementRef, OnInit, OnDestroy } from '@angular/core';
-import { CommonModule } from '@angular/common'; // ✅ Needed for ngStyle
+import { CommonModule } from '@angular/common'; 
 import Chart from 'chart.js/auto';
 import { DashboardService, DashboardStats, PotentialDistribution, ReadinessDistribution, MatrixRow, RecentActivity, Insight } from '../../../../services/dashboard.service';
 import { Subscription } from 'rxjs';
@@ -7,7 +7,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule], // ✅ Add CommonModule for ngStyle support
+  imports: [CommonModule],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
 })

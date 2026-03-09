@@ -32,7 +32,8 @@
         <h3 class="text-sm font-medium text-gray-500">Ready in 2–3 Years</h3>
         <span class="p-2 bg-yellow-100 rounded-lg">
           <svg class="w-5 h-5 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
           </svg>
         </span>
       </div>
@@ -47,7 +48,8 @@
         <h3 class="text-sm font-medium text-gray-500">Ready in 4+ Years</h3>
         <span class="p-2 bg-red-100 rounded-lg">
           <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
           </svg>
         </span>
       </div>
@@ -62,7 +64,8 @@
         <h3 class="text-sm font-medium text-gray-500">Contingency</h3>
         <span class="p-2 bg-blue-100 rounded-lg">
           <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
           </svg>
         </span>
       </div>
@@ -77,7 +80,9 @@
         <h3 class="text-sm font-medium text-gray-500">No Successor</h3>
         <span class="p-2 bg-gray-100 rounded-lg">
           <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
+            </path>
           </svg>
         </span>
       </div>
@@ -140,10 +145,13 @@
       <table class="min-w-full divide-y divide-gray-200">
         <thead>
           <tr class="bg-gray-50">
-            <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Potential / Readiness</th>
+            <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Potential /
+              Readiness</th>
             <th class="px-6 py-4 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Ready Now</th>
-            <th class="px-6 py-4 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Ready 1–2 Years</th>
-            <th class="px-6 py-4 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Ready 3+ Years</th>
+            <th class="px-6 py-4 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Ready 1–2 Years
+            </th>
+            <th class="px-6 py-4 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Ready 3+ Years
+            </th>
             <th class="px-6 py-4 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Not Ready</th>
           </tr>
         </thead>
@@ -191,9 +199,14 @@
               'text-green-600': activity.type === 'add',
               'text-purple-600': activity.type === 'review'
             }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path *ngIf="activity.type === 'update'" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
-              <path *ngIf="activity.type === 'add'" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-              <path *ngIf="activity.type === 'review'" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              <path *ngIf="activity.type === 'update'" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z">
+              </path>
+              <path *ngIf="activity.type === 'add'" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+              <path *ngIf="activity.type === 'review'" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+              </path>
             </svg>
           </span>
           <div>
@@ -208,7 +221,8 @@
       <div class="flex items-start gap-4">
         <span class="p-2 bg-yellow-100 rounded-lg">
           <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
           </svg>
         </span>
         <div>
