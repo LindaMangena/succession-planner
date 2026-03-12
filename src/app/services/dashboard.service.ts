@@ -181,7 +181,7 @@ export class DashboardService {
 
   updateFromSuccessionPlans(plans: SuccessionPlan[]) {
     console.log('Updating dashboard from plans:', plans);
-    
+
     // Update stats
     const stats: DashboardStats = {
       readyNow: plans.filter(p => p.readinessLevel === 'Ready Now').length,
@@ -277,4 +277,4 @@ export class DashboardService {
   exportToExcel(data: any[]) {
     this.exportService.exportToExcel(data);
   }
-} 
+}
